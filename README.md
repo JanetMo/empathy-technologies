@@ -13,7 +13,7 @@ The core idea behind Empathy Technologies is to create personalized learning pat
 ## Further Resources
 
 -   Foundations Paper
--   Scientific Validation
+-   (Scientific Validation)[Empathy Technologies Overview and Scientific Validation]
 -   Presentation
 
 ## Tools Used
