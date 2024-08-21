@@ -10,7 +10,6 @@ import {
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import {
 	create,
-	createCollection,
 	fetchCollection,
 	mplCore,
 	transferV1,
@@ -22,9 +21,17 @@ const isSolanaAddress = (value: string): boolean =>
 
 const module_e_3_collection = "D4hXyFdWK9yUs3EVoi9VqzjvPpgim8GRYr4vtoUmuh2c";
 
-async function readKeypairFromFile(umi: Umi, path: string): Promise<Signer> {
-	const key = await Bun.file(path).json();
-	const keypair = umi.eddsa.createKeypairFromSecretKey(Uint8Array.from(key));
+async function getKeypair(umi: Umi): Promise<Signer> {
+	const keypair = umi.eddsa.createKeypairFromSecretKey(
+		// Private key owning the example collection (module_e_3_collection)
+		Uint8Array.from([
+			111, 97, 157, 49, 203, 64, 13, 185, 113, 201, 31, 241, 192, 233,
+			189, 237, 38, 38, 183, 208, 61, 212, 25, 233, 219, 84, 29, 120, 43,
+			11, 196, 132, 117, 3, 47, 63, 116, 14, 91, 126, 223, 43, 237, 122,
+			218, 142, 54, 151, 131, 150, 125, 186, 112, 80, 148, 8, 173, 105,
+			210, 110, 116, 49, 72, 124,
+		]),
+	);
 	const signer = createSignerFromKeypair(umi, keypair);
 
 	return signer;
@@ -90,10 +97,7 @@ const app = new Elysia()
 			const umi = createUmi("https://api.devnet.solana.com").use(
 				mplCore(),
 			);
-			const nftAuthority = await readKeypairFromFile(
-				umi,
-				"keys/nft_authority.json",
-			);
+			const nftAuthority = await getKeypair(umi);
 			umi.use(signerIdentity(nftAuthority));
 
 			const collection = await fetchCollection(
