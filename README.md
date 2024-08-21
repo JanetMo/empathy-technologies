@@ -12,7 +12,7 @@ The core idea behind Empathy Technologies is to create personalized learning pat
 
 ## Further Resources
 
--  [NFT App)(https://fly.storage.tigris.dev/summer-dust-1907/app/index.html)
+-  [NFT App](https://fly.storage.tigris.dev/summer-dust-1907/app/index.html)
 -  [Presentation](https://www.canva.com/design/DAGOd680kCE/CIw3fPEoWmXc5946PZD69A/edit?utm_content=DAGOd680kCE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 -  [Figma](https://www.figma.com/design/Y8kZM8UnarhOteoPDy10vC/empathy-technologies-mockup?node-id=0-1&t=X9EkY0vObSu4LZYu-1)
 -  [ Foundations Paper](https://docs.google.com/document/d/1MCrJcOvVtQ7ZEGNEibEpj5ZUrBDh37fGLZAuS8LnsMM/edit?usp=sharing)
